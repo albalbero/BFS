@@ -73,7 +73,7 @@ with open("input.txt", "r") as f:
 
         posy = y_iniziale # Y = riga
         posx = x_iniziale # X = colonna
-        coda = [[posy, posx]]
+        coda = deque([[posy, posx]])
         matrice2[posy][posx] = 0
         
         # creo la lista strada per dire tutti i passaggi che ho fatto
@@ -83,7 +83,7 @@ with open("input.txt", "r") as f:
         while coda:
             
             # vado nella casella prima in coda
-            pos = coda.pop(0)
+            pos = coda.popleft()
             posy = pos[0]
             posx = pos[1]
         
@@ -94,10 +94,10 @@ with open("input.txt", "r") as f:
                 posy_finale = posy
                 posx_finale = posx
                 
-                coda_reverse = [[posy, posx]] # coda_reverse mi fa fare un BFS ma al contrario
+                coda_reverse = deque([[posy, posx]]) # coda_reverse mi fa fare un BFS ma al contrario
                 strada.append([posy, posx]) # aggiungo la pos iniziale che sarà quella finale
                 while matrice2[posy][posx] != 0: 
-                    pos = coda_reverse.pop(0)
+                    pos = coda_reverse.popleft()
                     posy = pos[0]
                     posx = pos[1]
                     
