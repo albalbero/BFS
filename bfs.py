@@ -95,7 +95,7 @@ with open("input.txt", "r") as f:
                 posx_finale = posx
                 
                 coda_reverse = [[posy, posx]] # coda_reverse mi fa fare un BFS ma al contrario
-                strada.appendl([posy, posx]) # aggiungo la pos iniziale che sarà quella finale
+                strada.append([posy, posx]) # aggiungo la pos iniziale che sarà quella finale
                 while matrice2[posy][posx] != 0: 
                     pos = coda_reverse.pop(0)
                     posy = pos[0]
