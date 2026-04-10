@@ -1,7 +1,7 @@
 '''
-Questo codice trova l'uscita di un labirinto usando l'algoritmo BFS creato da me
-I requisiti del labirinto per funzionare sono:
-- la prima riga deve contenere il numero di righe e colonne
+Questo codice trova l'uscita di un labirinto usando l'algoritmo BFS creato da me.
+Per funzionare il labirinto deve avere:
+- la prima riga con il numero di righe e colonne
 - le altre righe sotto sono una riga alla volta
 - i muri devono essere contrassegnati con #
 - gli spazi senza muri sono scritti con .
