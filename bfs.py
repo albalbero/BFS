@@ -47,6 +47,7 @@ def trovo_entrata(matrice):
                 return x_iniziale, y_iniziale
 
 
+
 with open("input.txt", "r") as f:
     linee, colonne = map(int, f.readline().split())
 
