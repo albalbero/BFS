@@ -2,11 +2,11 @@
 Questo codice trova l'uscita di un labirinto usando l'algoritmo BFS creato da me.
 Per funzionare il labirinto deve avere:
 - la prima riga con il numero di righe e colonne
-- le altre righe sotto sono una riga alla volta
-- i muri devono essere contrassegnati con #
-- gli spazi senza muri sono scritti con .
-- l'inizio e la fine sono rispettivamente S e E
-- l'inizio deve essere alla posizione [1][1]
+- le altre righe sotto una riga del labirinto alla volta
+- i muri scritti con #
+- gli spazi senza muri scritti con .
+- l'inizio e la fine contrassegnsti rispettivamente con S e E
+- l'inizio alla posizione [1][1]
 '''
 
 from collections import deque
