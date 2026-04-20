@@ -12,6 +12,14 @@ Per funzionare il labirinto deve avere:
 from collections import deque
 import time
 
+def contatore_r_c(f):
+    righe = 0
+    while f.readline() != "":
+        righe += 1
+    f.seek(0)
+    colonne = len(list(map(str, f.readline().split())))
+    return righe, colonne
+
 # controllo se ci sono sia S che E
 def controllo(matrice):
     entrata = False
@@ -25,7 +33,6 @@ def controllo(matrice):
             break            
     return entrata, uscita
     
-
 # allargo la matrice con # attorno
 def allargo_matrice(matrice, linee, colonne):
     temp = []
@@ -50,16 +57,20 @@ def trovo_entrata(matrice):
 def tempo():
     return(time.time())
 
+# ---------------------------------------------------------
 
 with open("input.txt", "r") as f:
 
     inizio = tempo()
 
-    linee, colonne = map(int, f.readline().split())
+    righe, colonne = contatore_r_c(f)
 
-    # faccio la matrice 
+    f.seek(0)
+    #righe, colonne = map(int, f.readline().split())
+
+    # faccio la matrice come variabile
     matrice = []
-    for i in range(linee):
+    for i in range(righe):
         riga = list(map(str, f.readline().split()))
         matrice.append(riga)
 
@@ -70,7 +81,7 @@ with open("input.txt", "r") as f:
     if not uscita:
         print("Manca l'uscita")
     else:
-        matrice = allargo_matrice(matrice, linee, colonne) # allargo la matrice
+        matrice = allargo_matrice(matrice, righe, colonne) # allargo la matrice
 
         # creo una matrice copia con tutti None
         matrice2 = [[None for _ in riga] for riga in matrice]
@@ -170,5 +181,5 @@ with open("input.txt", "r") as f:
                 print(' '.join(row))
 
     fine = tempo()
-    
+
     print("tempo impiegato = ", fine - inizio)
