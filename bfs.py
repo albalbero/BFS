@@ -10,6 +10,7 @@ Per funzionare il labirinto deve avere:
 '''
 
 from collections import deque
+import time
 
 # controllo se ci sono sia S che E
 def controllo(matrice):
@@ -46,9 +47,14 @@ def trovo_entrata(matrice):
                 y_iniziale = i
                 return x_iniziale, y_iniziale
 
+def tempo():
+    return(time.time())
 
 
 with open("input.txt", "r") as f:
+
+    inizio = tempo()
+
     linee, colonne = map(int, f.readline().split())
 
     # faccio la matrice 
@@ -162,3 +168,7 @@ with open("input.txt", "r") as f:
                     matrice2[el[0]][el[1]] = '·'
             for row in matrice2:
                 print(' '.join(row))
+
+    fine = tempo()
+    
+    print("tempo impiegato = ", fine - inizio)
