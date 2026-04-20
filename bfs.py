@@ -4,6 +4,7 @@ Per funzionare:
 - ogni riga del labirinto deve corrispondere a una riga del file di input
 - i muri devono essere scritti con #
 - gli spazi senza muri devono essere scritti con .
+- tra due elemtni del labirinto (es. tra un # e un .) ci deve essere uno spazio
 - l'inizio e la fine devono essere contrassegnsti rispettivamente con S e E
 '''
 
