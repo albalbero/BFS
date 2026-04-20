@@ -66,7 +66,7 @@ with open("input.txt", "r") as f:
     righe, colonne = contatore_r_c(f)
 
     f.seek(0)
-    #righe, colonne = map(int, f.readline().split())
+
 
     # faccio la matrice come variabile
     matrice = []
